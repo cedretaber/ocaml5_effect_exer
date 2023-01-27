@@ -1,0 +1,4 @@
+(executable
+ (public_name effect_exer)
+ (name main)
+ (libraries effect_exer))
