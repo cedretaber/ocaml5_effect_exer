@@ -1,4 +1,4 @@
 open Effect_exer
 
 let _ =
-  Complex.main ()
+  State_eff.main ()

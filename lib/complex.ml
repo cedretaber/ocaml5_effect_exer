@@ -1,8 +1,8 @@
-module StringResult = Result_effect.Make(struct type e = string end)
+module StringResult = Result_eff.Make(struct type e = string end)
 
-module StringId = Idgen_effect.MakePerformer(struct type t = string end)
+module StringId = Idgen_eff.MakePerformer(struct type t = string end)
 
-module StringIdRunner = Idgen_effect.Make(struct
+module StringIdRunner = Idgen_eff.Make(struct
   type t = string
   type state = int
   let init () = 0
