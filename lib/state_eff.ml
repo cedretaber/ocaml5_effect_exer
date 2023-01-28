@@ -13,7 +13,9 @@ module Make(S : sig type t end) = struct
 
   let run ~(init : t) f arg =
     let state = ref init in
-    try_with f arg {
+    match_with f arg {
+      retc= (fun res -> state, res);
+      exnc= raise;
       effc= fun (type c) (eff : c Effect.t) ->
         match eff with
         | Get -> Some (fun (k : (c, _) continuation) -> continue k !state)
